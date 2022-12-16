@@ -1,0 +1,9 @@
+## defines a function print_hello_world that contains the original code, and then calls that function within an if statement
+
+--------------------------------
+
+def print_hello_world():
+    print("hello world")
+
+if __name__ == "__main__":
+    print_hello_world()
