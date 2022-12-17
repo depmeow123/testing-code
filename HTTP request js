@@ -1,0 +1,35 @@
+------- ## XMLHttpRequest
+
+function sendGetRequest() {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', '/my/url', true);
+  xhr.onload = function () {
+    if (this.status === 200) {
+      const data = JSON.parse(this.responseText);
+    }
+  };
+  xhr.send();
+}
+
+------ ## fetch()
+
+async function sendGetRequest() {
+  const response = await fetch('/my/url');
+  const data = await response.json();
+  }
+  
+  
+ 
+async function sendPostRequest() {
+  const response = await fetch('/my/url', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      key: 'value'
+    })
+  });
+  const data = await response.json();
+  // Do something with the data
+}
